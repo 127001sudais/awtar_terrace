@@ -1,0 +1,42 @@
+<section class="showcase">
+    <div class="container">
+        <div class="pb-2 mt-4 mb-2 border-bottom">
+            <h2>Other features coming soon...<a class="btn btn-info float-right btn-sm" href="/employee"><i
+                        class="fa fa-plus"></i> Create New</a></h2>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each emplist}}
+                        <tr>
+                            <td>{{this.full_name}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.mobile}}</td>
+                            <td>{{this.address}}</td>
+                            <td>{{this.salary}}</td>
+                            <td>
+                                <a href="/employee/{{this._id}}"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                <a href="/employee/delete/{{this._id}}"
+                                    onclick="return confirm('Are you sure to delete this record ?');"><i
+                                        class="fa fa-trash" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
